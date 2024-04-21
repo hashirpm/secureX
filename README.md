@@ -44,10 +44,9 @@ Wanna know more? See the demo video [here][video link]. -->
 
 1. Open [secureX](https://securex-dapp.vercel.app/) in your browser.
 
-2. Login to your MetaMask and add Polygon to your Metamask networks.
-[How to add Polygon network to Metamask?](https://docs.polygon.technology/docs/develop/metamask/config-polygon-on-metamask/)
+2. Login to your MetaMask and add Sepolia to your Metamask networks.
 
-3. Go to [Polygon Faucet](https://faucet.polygon.technology/) and paste your wallet address to obtain MATIC for testing.
+3. Go to [Sepolia Faucet](https://www.alchemy.com/faucets/ethereum-sepolia) and paste your wallet address to obtain ETH for testing.
 
 4. Connect secureX website to Metamask.
 
@@ -66,10 +65,9 @@ https://github.com/hashirpm/secureX.git
 
 3. Run ```npm install``` to install all the dependencies.
 
-4. Login to your MetaMask and add Polygon Mumbai Tesnet to your Metamask networks.
-[How to add Polygon network to Metamask?](https://docs.polygon.technology/docs/develop/metamask/config-polygon-on-metamask/)
+4. Login to your MetaMask and add Sepolia Tesnet to your Metamask networks.
 
-5. Go to [Polygon Faucet](https://faucet.polygon.technology/) and paste your wallet address to obtain MATIC for testing.
+5. Go to [Sepolia Faucet](https://www.alchemy.com/faucets/ethereum-sepolia) and paste your wallet address to obtain ETH for testing.
 
 6. Inner the folder of the cloned project, start the application : 
 ```
@@ -84,11 +82,9 @@ npm run dev
 
 ## Technologies used 💻:
 
- - Blockchain
  - Solidity
  - NextJS
  - IPFS
- - Polygon Chain
 
  
 ## Made with ❤️ by:
