@@ -65,7 +65,7 @@ https://github.com/hashirpm/secureX.git
 
 3. Run ```npm install``` to install all the dependencies.
 
-4. Login to your MetaMask and add Sepolia Tesnet to your Metamask networks.
+4. Login to your MetaMask and add Sepolia Testnet to your Metamask networks.
 
 5. Go to [Sepolia Faucet](https://www.alchemy.com/faucets/ethereum-sepolia) and paste your wallet address to obtain ETH for testing.
 
