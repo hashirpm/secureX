@@ -1,7 +1,7 @@
 import { CONTRACT_ADDRESS } from "@/const/value";
 import { abi } from "@/const/contract-abi";
 import { ethers, utils } from "ethers";
-import { storeFiles } from "./uploadFile";
+
 let provider;
 let contract: ethers.Contract;
 let signer: string | ethers.providers.Provider | ethers.Signer;
@@ -48,15 +48,9 @@ export const addEvidence = async (
   caseId: string,
   evidenceDescription: string,
   evidenceDate: string,
-  file: any
+  fileUrl: string
 ) => {
   try {
-    let fileUrl;
-    if (file) {
-      fileUrl = await storeFiles(file);
-      fileUrl = fileUrl + `/${file[0].name}`;
-      console.log({ fileUrl });
-    }
     await contract
       .connect(signer)
       .registerEvidence(caseId, evidenceDescription, fileUrl, evidenceDate)
@@ -98,3 +92,12 @@ export const tipEvidence = async (address: string, amount: string) => {
     return { status: false };
   }
 };
+
+
+export function convertIPFSUriToUrl(ipfsUri: string): string {
+
+  if (ipfsUri.includes("ipfs://")) {
+    return ipfsUri.replace("ipfs://", "https://ipfs.io/ipfs/")
+  }
+  return ipfsUri
+}

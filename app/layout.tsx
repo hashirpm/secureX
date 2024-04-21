@@ -11,13 +11,14 @@ import "@rainbow-me/rainbowkit/styles.css";
 
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
-import { polygonMumbai } from "wagmi/chains";
+import { sepolia } from "wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 import { title } from "@/components/primitives";
+import { ThirdwebProvider } from "@thirdweb-dev/react";
 
 const { chains, publicClient } = configureChains(
-  [polygonMumbai],
+  [sepolia],
   [
     alchemyProvider({ apiKey: process.env.ALCHEMY_ID as string }),
     publicProvider(),
@@ -52,17 +53,20 @@ export default function RootLayout({
       >
         <WagmiConfig config={wagmiConfig}>
           <RainbowKitProvider chains={chains}>
-            <Providers
-              themeProps={{ attribute: "class", defaultTheme: "dark" }}
+            <ThirdwebProvider
+              clientId={process.env.THIRDWEB_CLIENT_ID} // You can get a client id from dashboard settings
             >
-              <div className="relative flex flex-col h-screen">
-                <Navbar />
-
-                <main className="container mx-auto max-w-7xl px-6 flex-grow">
-                  {children}
-                </main>
-              </div>
-            </Providers>
+              <Providers
+                themeProps={{ attribute: "class", defaultTheme: "dark" }}
+              >
+                <div className="relative flex flex-col h-screen">
+                  <Navbar />
+                  <main className="container mx-auto max-w-7xl px-6 flex-grow">
+                    {children}
+                  </main>
+                </div>
+              </Providers>
+            </ThirdwebProvider>
           </RainbowKitProvider>
         </WagmiConfig>
       </body>
