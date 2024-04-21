@@ -14,7 +14,6 @@ import { CONTRACT_ADDRESS } from "@/const/value";
 import { abi } from "@/const/contract-abi";
 import { ethers, utils } from "ethers";
 import { Inter } from "next/font/google";
-import { storeFiles } from "@/utils/uploadFile";
 import { getEvidences, tipEvidence } from "@/utils/helpers";
 
 const inter = Inter({ subsets: ["latin"] });
